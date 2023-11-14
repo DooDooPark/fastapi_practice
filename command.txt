@@ -31,3 +31,16 @@ curl -X 'POST' \
 
 
 curl -X 'DELETE'  'http://127.0.0.1:8000/todo/1' -H 'accept: application/json'
+
+planner.
+
+
+curl -X 'POST' \
+'http://127.0.0.1:8000/signup' \
+ -H 'accept: application/json' \
+ -H 'Content-Type: application/json' \
+ -d '{
+   "email":"fastapi@packt.com",
+   "password":"Strong!",
+   "username":"FastPackt"
+ }'

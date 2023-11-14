@@ -23,8 +23,14 @@ async def sign_new_user(data:User) -> dict:
 async def sign_user_in(user:UserSignIn)->dict:
     if user.email not in users:
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Wrong credentials passed"
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="user doesn't exisit"
+        )
+
+    if users[user.email].password != user.password:
+        raise HTTPException(
+            status_code = status.HTTP_403_FORBIDDEN,
+            detail = "Worng password input!"
         )
 
     return {
