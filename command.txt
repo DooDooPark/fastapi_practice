@@ -62,3 +62,20 @@ curl -X 'POST' \
    "email":"fastapi@packt.com",
    "password":"password!"
  }'
+
+
+curl -X 'GET' 'http://127.0.0.1:8000/event/' -H 'accept: application/json' 
+
+
+curl -X 'POST' \
+'http://127.0.0.1:8000/event/new' \
+ -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id":1,
+    "title":"FastAPI Book Launch",
+    "image":"https://linktomyimage.com/image.png",
+    "description":"discussing",
+    "tags":["python", "fastapi","book","launch"],
+    "location":"Google Meet"
+  }'
